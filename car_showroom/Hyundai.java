@@ -1,0 +1,74 @@
+
+package com.mycompany.carshowroom;
+
+public class Hyundai {
+    int no;
+    static int count; 
+    private String[] model;
+    private int[] year;
+    private double[] price;
+    private String[] color;
+
+    static{
+       count = 1;
+    }
+    
+    public Hyundai() {
+        model = new String[]{"Elantra", "Sonata", "Tucson", "Santa Fe", "Kona", "Veloster", "Creta"};
+        year = new int[]{2022, 2021, 2020, 2023, 2022, 2021, 2020};
+        price = new double[]{3000000, 4000000, 4500000, 5000000, 3500000, 3800000, 3200000};
+        color = new String[] {"Black", "White", "Silver", "Red", "Blue", "Grey", "Yellow"};
+    }
+
+    public void getHyundaiCars() {
+        for (int i = 0; i < model.length; i++) {
+            this.no = count;
+            System.out.println(this.no + ": ");
+            System.out.println(model[i]);
+            System.out.println("Year is " + year[i]);
+            System.out.println("Price is " + price[i]);
+            System.out.println("Color is " + color[i]);
+            System.out.println("------------------");
+            count++;
+        }
+    }
+
+    public static class CarUtils {
+        public static void printHyundaiInfo() {
+            Hyundai hyundai = new Hyundai();
+            hyundai.getHyundaiCars();
+        }
+    }
+    
+    public String[] getModel() {
+        return model;
+    }
+
+    public void setModel(String[] model) {
+        this.model = model;
+    }
+
+    public int[] getYear() {
+        return year;
+    }
+
+    public void setYear(int[] year) {
+        this.year = year;
+    }
+
+    public double[] getPrice() {
+        return price;
+    }
+
+    public void setPrice(double[] price) {
+        this.price = price;
+    }
+
+    public String[] getColor() {
+        return color;
+    }
+
+    public void setColor(String[] color) {
+        this.color = color;
+    }
+}
